@@ -315,6 +315,15 @@ viewerElem.addEventListener('contextmenu', (ev) => {
 });
 
 
+// Overlay öffnen/schließen
+document.getElementById('floorplanButton').addEventListener('click', () => {
+  document.getElementById('floorplanOverlay').style.display = 'flex';
+});
+
+document.getElementById('closeOverlay').addEventListener('click', () => {
+  document.getElementById('floorplanOverlay').style.display = 'none';
+});
+
   // Expose tiny helper in console to tweak hotspot placement:
   // scenes.<key>.view.setYaw(<radians>); scenes.<key>.view.setPitch(<radians>);
 })();

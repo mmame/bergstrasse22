@@ -3,17 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wohnungs‑Tour</title>
+  <title>Wohnungs-Tour</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Marzipano from CDN (for offline use, download marzipano.js and replace the script src) -->
+  <!-- Marzipano von lokal (statt CDN) -->
   <script src="marzipano.js"></script>
 </head>
 <body>
   <div id="viewer"></div>
 
+  <!-- 🏠 Grundriss-Button separat schwebend -->
+  <button id="floorplanButton">🏠</button>
+
+  <!-- 🖼 Overlay-Fenster für Grundrisse -->
+  <div id="floorplanOverlay">
+    <div class="overlay-content">
+      <button id="closeOverlay">✕</button>
+      <h2>Grundrisse</h2>
+      <div class="plans">
+        <img src="images/ug.png" alt="UG">
+        <img src="images/eg.png" alt="EG">
+        <img src="images/dg.png" alt="DG">
+      </div>
+    </div>
+  </div>
+
+  <!-- UI für Titel, Szenen-Auswahl und Hilfe -->
   <div class="ui">
     <div class="topbar">
-      <div class="title">Wohnungs‑Tour</div>
+      <div class="title">Wohnungs-Tour</div>
       <div class="scene-select" id="sceneList"></div>
     </div>
     <div class="help">
