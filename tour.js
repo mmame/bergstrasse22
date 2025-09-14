@@ -315,14 +315,27 @@ viewerElem.addEventListener('contextmenu', (ev) => {
 });
 
 
-// Overlay öffnen/schließen
+// Overlay öffnen
 document.getElementById('floorplanButton').addEventListener('click', () => {
   document.getElementById('floorplanOverlay').style.display = 'flex';
+  document.getElementById('floorplanButton').style.display = 'none'; // 🟢 ausblenden
 });
 
+// Overlay schließen per X
 document.getElementById('closeOverlay').addEventListener('click', () => {
   document.getElementById('floorplanOverlay').style.display = 'none';
+  document.getElementById('floorplanButton').style.display = 'block'; // 🟢 wieder anzeigen
 });
+
+// Klick auf dunklen Hintergrund schließt Overlay
+document.getElementById('floorplanOverlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
+    document.getElementById('floorplanOverlay').style.display = 'none';
+    document.getElementById('floorplanButton').style.display = 'block'; // 🟢 wieder anzeigen
+  }
+});
+
+
 
   // Expose tiny helper in console to tweak hotspot placement:
   // scenes.<key>.view.setYaw(<radians>); scenes.<key>.view.setPitch(<radians>);
