@@ -1,0 +1,37 @@
+html, body { height: 100%; margin: 0; }
+#viewer { position: absolute; inset: 0; background: #000; }
+
+.ui { position: absolute; inset: 0; pointer-events: none; }
+.topbar {
+  position: absolute; top: 12px; left: 12px; right: 12px;
+  display: flex; gap: 12px; align-items: center; justify-content: space-between;
+  padding: 8px 12px; background: rgba(20,20,20,.55); border-radius: 10px;
+  color: #fff; font: 16px/1.2 system-ui, sans-serif; pointer-events: auto;
+}
+.title { font-weight: 600; }
+.scene-select button {
+  margin: 0 4px 0 0; padding: 6px 10px; border-radius: 8px; border: 0;
+  background: rgba(255,255,255,.12); color: #fff; cursor: pointer;
+}
+.scene-select button.active { background: rgba(255,255,255,.28); }
+
+.help {
+  position: absolute; bottom: 12px; left: 12px; padding: 6px 10px;
+  background: rgba(20,20,20,.55); color: #fff; border-radius: 8px;
+  font: 13px/1.3 system-ui, sans-serif; pointer-events: auto;
+}
+
+/* Hotspot badge */
+.hotspot {
+  background: rgba(0,0,0,.65);
+  color: #fff;
+  padding: 6px 9px;
+  border-radius: 999px;
+  font: 14px/1.2 system-ui, sans-serif;
+  white-space: nowrap;
+  border: 1px solid rgba(255,255,255,.25);
+  box-shadow: 0 4px 14px rgba(0,0,0,.45);
+  user-select: none;
+  cursor: pointer;
+}
+.hotspot:hover { background: rgba(0,0,0,.85); }
